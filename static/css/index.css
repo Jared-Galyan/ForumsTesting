@@ -1,0 +1,132 @@
+body {
+    background-image: url('https://cdn.discordapp.com/attachments/763643207581171752/792535955676201000/unknown.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+ul {
+    list-style-type: none;
+    margin: -8px;
+    padding-right: 303px;
+    overflow: hidden;
+    background-color: #262525;
+}
+li {
+    float: right;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 26px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+li a:hover {
+    background-color: #111;
+}
+
+.user-container{
+    background-color: #262525;
+    margin:auto;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    max-width: 1300px;
+    height: 23px;
+    padding: 10px;
+    box-shadow: 5px 5px 18px #000000;
+}
+
+.user-container p{
+    color:white;
+    float: left;
+    margin-top: 2px;
+    margin-left: 30px;
+}
+
+#main-container{
+    background-color: #262525;
+    width: 100%;
+    margin:auto;
+    max-width: 1300px;
+    height: auto;
+    padding: 10px;
+    box-shadow: 5px 5px 18px #000000;
+}
+#left-column{
+    width: 74%;
+    max-width: 1300px;
+    background-color: white;
+    display:inline-block;
+}
+
+#announcements-container{
+    background-color:#434343;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height: 30px;
+}
+
+#announcements-container-bottom{
+    background-color: #363636;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height:auto;
+}
+
+#announcements-container p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+#announcements-container-bottom p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+}
+
+#right-column{
+    width: 25%;
+    max-width: 1300px;
+    background-color: tomato;
+    display:inline-block;
+    vertical-align:top;
+}
+
+#tc-container{
+    background-color:#434343;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height:30px;
+}
+#tc-container p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+#tc-container-bottom{
+    background-color: #363636;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height:auto;
+    
+}
+
+#tc-container-bottom p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+}
