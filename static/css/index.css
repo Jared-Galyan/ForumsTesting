@@ -130,3 +130,34 @@ li a:hover {
     margin-left: 5px;
     margin-top: 7px;
 }
+
+#rp-container{
+    background-color:#434343;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height:30px;
+}
+#rp-container p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+#rp-container-bottom{
+    background-color: #363636;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height:auto;
+    
+}
+
+#rp-container-bottom p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+}
