@@ -57,8 +57,39 @@ li a:hover {
 #left-column{
     width: 74%;
     max-width: 1300px;
-    background-color: white;
     display:inline-block;
+}
+
+#about-container{
+    background-color:#434343;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height: 30px;
+}
+
+#about-container-bottom{
+    background-color: #363636;
+    border-color:#707070;
+    border-style: solid;
+    border-width: thin;
+    height:auto;
+    margin-bottom: 5px;
+}
+
+#about-container p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+#about-container-bottom p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
 }
 
 #announcements-container{
@@ -92,10 +123,36 @@ li a:hover {
     margin-top: 7px;
 }
 
+#announcement{
+    display:block;
+}
+
+#announcement h1{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display:inline-block;
+}
+
+#announcement h3{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display:inline-block;
+    font-size: medium;
+}
+
+#announce-pfp {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    display:inline-block;
+}
+
 #right-column{
     width: 25%;
     max-width: 1300px;
-    background-color: tomato;
     display:inline-block;
     vertical-align:top;
 }
@@ -121,6 +178,7 @@ li a:hover {
     border-style: solid;
     border-width: thin;
     height:auto;
+    margin-bottom: 5px;
     
 }
 
@@ -152,7 +210,6 @@ li a:hover {
     border-style: solid;
     border-width: thin;
     height:auto;
-    
 }
 
 #rp-container-bottom p{
