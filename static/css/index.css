@@ -90,6 +90,7 @@ li a:hover {
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 5px;
     margin-top: 7px;
+    padding: 1em;
 }
 
 #announcements-container{
@@ -116,13 +117,6 @@ li a:hover {
     font-weight: bold;
 }
 
-#announcements-container-bottom p{
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 5px;
-    margin-top: 7px;
-}
-
 #announcement{
     display:block;
 }
@@ -131,23 +125,47 @@ li a:hover {
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    display:inline-block;
 }
 
 #announcement h3{
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    display:inline-block;
     font-size: medium;
+    margin-top: -15px;
+}
+
+#announcement p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: -10px;
+    padding: 1em;
+}
+
+#announce-flex{
+    display:flex;
+}
+
+#announce-title-container{
+    -ms-flex-align: center;
+}
+
+#announce-pfp-container{
+    padding: 10px;
 }
 
 #announce-pfp {
     border-radius: 50%;
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     padding: 5px;
-    display:inline-block;
+}
+
+hr.solid{
+    border-top: 1px solid #bbb;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #right-column{
