@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://cdn.discordapp.com/attachments/763643207581171752/792535955676201000/unknown.png');
+    background-image: url('/static/img/unknown.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -229,6 +229,29 @@ hr.solid{
     padding: 5px;
 }
 #User p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 120px;
+    margin-top: 7px;
+    float: right;
+    padding: 5px;
+}
+
+#RecentPost{
+    display: flex;
+    -ms-flex-align: baseline;
+    padding: 5px;
+}
+
+#RecentPost h4{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 7px;
+    display: inline-block;
+    padding: 5px;
+}
+#RecentPost p{
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 120px;

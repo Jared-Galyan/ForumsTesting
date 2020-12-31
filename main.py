@@ -16,5 +16,15 @@ def home():
         else:
             return render_template("index.html")
 
+@app.route("/forums/", methods=["POST", "GET"])
+def forums():
+    if request.method == "POST":
+        return render_template("forums.html")
+    else:
+        if "email" in session:
+            return render_template("forums.html")
+        else:
+            return render_template("forums.html")
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True)
