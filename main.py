@@ -26,5 +26,25 @@ def forums():
         else:
             return render_template("forums.html")
 
+@app.route("/register/", methods=["POST", "GET"])
+def register():
+    if request.method == "POST":
+        return render_template("register.html")
+    else:
+        if "email" in session:
+            return render_template("register.html")
+        else:
+            return render_template("register.html")
+
+@app.route("/login/", methods=["POST", "GET"])
+def login():
+    if request.method == "POST":
+        return render_template("login.html")
+    else:
+        if "email" in session:
+            return render_template("login.html")
+        else:
+            return render_template("login.html")
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True)
