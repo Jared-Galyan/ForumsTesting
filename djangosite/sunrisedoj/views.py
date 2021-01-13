@@ -11,7 +11,11 @@ class RegisterView(TemplateView):
         form = RegisterForm()
         return render(request, self.template_name, {'form': form})
 
+class HomeView(TemplateView):
+    template_name = 'index.html'
 
+    def get(self, request):
+        return render(request, self.template_name)
 
 
 

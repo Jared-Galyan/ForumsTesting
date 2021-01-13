@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.conf.urls import url
 from django.urls import path
 from sunrisedoj import views
-from sunrisedoj.views import RegisterView
+from sunrisedoj.views import *
 
 urlpatterns = [
-    url(r'register/', RegisterView.as_view(), name='register')
+    url(r'register/', RegisterView.as_view(), name='register'),
+    url(r'', HomeView.as_view(), name='home')
     # path('admin/', admin.site.urls),
     # path('', views.home_view),
     # path('forums/', views.forums_view),
