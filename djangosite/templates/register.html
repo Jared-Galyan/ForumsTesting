@@ -9,6 +9,7 @@
         </div>
         <div id="login-container-bottom">
             <form id="login" action="#" method="POST" autocomplete="off"><br><br>
+              {% csrf_token %}
               {{ form.as_p}}  
               
               <!-- <label for="email">Email:</label>
