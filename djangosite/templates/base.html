@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/static/css/index.css" rel="stylesheet">
+        <link href="/static/css/forums.css" rel="stylesheet">
+        <link href="/static/css/login.css" rel="stylesheet">
+    </head>
+<body>
+    <ul>
+        <li><a class="active" href="#home">Departments</a></li>
+        <li><a href="#news">Resources</a></li>
+        <li><a href="/forums/">Forums</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    
+    <div class="user-container">
+        <p>Username</p>
+    </div>
+    <div class="container">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
