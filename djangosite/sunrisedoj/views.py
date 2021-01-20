@@ -80,29 +80,6 @@ class LoginView(TemplateView):
                 else:
                     return render('need_confirmed.html')
 
-class RegisterView(TemplateView):
-    template_name = 'register.html'
-
-    def get(self, request):
-        form = RegisterForm()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request):
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            em = form.cleaned_data['Email']
-            un = form.cleaned_data['Username']
-            pas = form.cleaned_data['Password']
-            print(em)
-            result = AsyncStuff.registered(em)
-            if result is not None:
-                return redirect('login')
-            else:
-                AsyncStuff.new_account(email=em, username=un, password=pas)
-                return redirect('login')
-
-            return redirect('home')
-
 class ForumsView(TemplateView):
     template_name = 'forums.html'
 

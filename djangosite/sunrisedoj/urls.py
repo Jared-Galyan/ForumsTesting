@@ -21,9 +21,7 @@ from sunrisedoj.views import *
 
 
 urlpatterns = [
-    url(r'^register/$', RegisterView.as_view(), name='register'),
     url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^forums/$', ForumsView.as_view(), name='forums'),
     url(r'^account/', include('accounts.urls'))
     # path('admin/', admin.site.urls),
