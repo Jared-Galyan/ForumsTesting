@@ -110,6 +110,13 @@ class ForumsView(TemplateView):
         
         return render(request, self.template_name)
 
+class ProfileView(TemplateView):
+    template_name = 'profile.html'
+
+    def get(self, request, u_id=None):
+        print(u_id)
+        return render(request, self.template_name)
+
 # def home_view(request):
 #     """Home view callable, for the home page."""
 #     return render(request, 'index.html')
