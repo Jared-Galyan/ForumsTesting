@@ -8,7 +8,46 @@
     border-color:#707070;
     border-style: solid;
     border-width: thin;
-    height: 30px;
+    height: auto;
+}
+#profile-flex{
+    display:flex;
+}
+
+#profile-title-container{
+    -ms-flex-align: center;
+}
+
+#profile-pfp-container{
+    padding: 10px;
+}
+#profile-pfp {
+    height: 128px;
+    width: 128px;
+    display: inline-block;
+    border: 5px solid #707070;
+}
+
+#profile-container h1{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#profile-container h3{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: -15px;
+}
+
+#profile-container p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: -10px;
+    padding: 1em;
 }
 
 #profile-container-bottom{

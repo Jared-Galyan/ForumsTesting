@@ -8,13 +8,16 @@ from uuid import uuid4
 from cryptography.fernet import Fernet
 from asgiref.sync import async_to_sync, sync_to_async
 from accounts.forms import RegisterForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 class ProfileView(TemplateView):
     template_name = 'profile.html'
 
-    def get(self, request):
-        return render(request, self.template_name)
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        args = {'user_data': user}
+        return render(request, self.template_name, args)
 
 class RegisterView(TemplateView):
     template_name = 'register.html'

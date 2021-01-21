@@ -3,11 +3,24 @@
 
 {% block content %}
 <div id="main-container">
-    <div id="login-column">
-        <div id="login-container">
-            <p>Profile</p>            
+    <div id="profile-column">
+        <div id="profile-container">
+            <div id="profile-flex">
+                <div id="profile-pfp-container">
+                    {% if user_data.userprofile.pfp is None %}
+                        <img src="/static/img/Banner-01_2.jpeg" alt="Avatar" id="profile-pfp">
+                    {% else %}
+                        <img src="{{ user_data.userprofile.pfp.url }}" alt="Avatar" id="profile-pfp">
+                    {% endif %}
+                </div>
+                <div id="profile-title-container">
+                    <h1>{{ user_data.username }}</h1>
+                    <h3>{{ user_data.userprofile.bio }}</h3>
+                </div>
+            </div>
         </div>
-        <div id="login-container-bottom">
+        <div id="profile-container-bottom">
+            <h2>{{ user_data.username }}</h2>
         </div>
     </div>
 </div>

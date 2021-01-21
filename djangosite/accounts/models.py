@@ -7,8 +7,11 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=User)
     bio = models.CharField(max_length=500)
     confirmed = models.IntegerField(default=0)
-    pfp = ResizedImageField(size=[128, 128], crop=['middle', 'center'], upload_to='djangosite/static/img', quality=99, blank=True, null=True)
+    pfp = ResizedImageField(size=[128, 128], crop=['middle', 'center'], upload_to='profile-pic', quality=99, blank=True, null=True)
     token = models.CharField(max_length=100000)
+
+    def __str__(self):
+        return self.user.username
     
 def create_profile(sender, **kwargs):
     if kwargs['created']:
