@@ -80,13 +80,6 @@ class LoginView(TemplateView):
                 else:
                     return render('need_confirmed.html')
 
-class ForumsView(TemplateView):
-    template_name = 'forums.html'
-
-    def get(self, request):
-        
-        return render(request, self.template_name)
-
 # def home_view(request):
 #     """Home view callable, for the home page."""
 #     return render(request, 'index.html')
