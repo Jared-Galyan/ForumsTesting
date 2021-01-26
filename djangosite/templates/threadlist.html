@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div id="main-container">
+    <div id="left-column">
+        <div id="forum-main">
+            <div id="forums-container">
+                <div id="ForumCate">
+                    <div id="ForumCateName">
+                        <h4>{{ forum.name }}</h4>
+                    </div>
+                    <div id="ForumData">
+                        <p>Recent Posts</p>
+                        <p>Posts</p>
+                        <p>Threads</p>
+                    </div>
+                </div>    
+            </div>
+            <div id="forums-container-bottom">
+                {% for subforum in subforums %}
+                    {% if subforum.parent.name == forum.name %}
+                        <div id="forum">
+                            <div id="ForumIcon">
+                                <img src="/static/img/folder.png" alt="Avatar" id="forum-icon">
+                            </div>
+                            <div id="ForumTitle">
+                                <h4><a href="http://localhost:8000/forums/{{ forum.category.id }}/{{ forum }}/{{ subforum }}" id='forumlink'>{{ subforum.name }}</a></h4>
+                                <p>{{ subforum.description }}</p>
+                            </div>
+                        </div>
+                        <hr class="solid">
+                    {% endif %}
+                {% endfor %}
+                {% for thread in threads %}
+                    {% if thread.forum.name == forum.name %}
+                        <div id="forum">
+                            <div id="ForumIcon">
+                                <img src="/static/img/page.png" alt="Avatar" id="forum-icon">
+                            </div>
+                            <div id="ForumTitle">
+                                <h4>{{ thread.name }}</h4>
+                                <p>{{ thread.content }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if thread.subforum.name == forum.name %}
+                        <div id="forum">
+                            <div id="ForumIcon">
+                                <img src="/static/img/page.png" alt="Avatar" id="forum-icon">
+                            </div>
+                            <div id="ForumTitle">
+                                <h4>{{ thread.name }}</h4>
+                                <p>{{ thread.content }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div id="right-column">
+        
+    </div>
+</div>
+{% endblock %}

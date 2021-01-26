@@ -25,7 +25,7 @@
                                     <img src="/static/img/folder.png" alt="Avatar" id="forum-icon">
                                 </div>
                                 <div id="ForumTitle">
-                                    <h4>{{ forum.name }}</h4>
+                                    <h4><a href="http://localhost:8000/forums/{{ forum.category.id }}/{{ forum }}" id='forumlink'>{{ forum.name }}</a></h4>
                                     <p>{{ forum.description }}</p>
                                 </div>
                             </div>

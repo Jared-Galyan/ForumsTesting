@@ -28,7 +28,6 @@
     margin-left: 10px;
     margin-top: 7px;
     font-weight: bold;
-    float: right;
 }
 
 #forums-container-bottom h4{
@@ -77,12 +76,30 @@
 }
 
 #forum-icon {
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    padding: 5px;
+    height: 50px;
+    width: 50px;
+    padding: 8px;
 }
 
 #forumTitle{
     -ms-flex-align: center;
+}
+
+#forumlink:link {
+    color: white;
+  }
+  
+  /* visited link */
+#forumlink:visited {
+color: white;
+}
+
+/* mouse over link */
+#forumlink:hover {
+color: lightslategray;
+}
+
+/* selected link */
+#forumlink:active {
+color: lightslategray;
 }

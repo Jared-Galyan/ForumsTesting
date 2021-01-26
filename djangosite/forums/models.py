@@ -12,7 +12,6 @@ class Category(models.Model):
 class Forum(models.Model):
     category = models.ForeignKey(Category, on_delete=Category, null=True)
     name = models.CharField(max_length=150)
-    parent = models.BooleanField(default=False)
     description = models.CharField(max_length=500)
     threads = models.IntegerField(default=0)
     posts = models.IntegerField(default=0)
@@ -20,10 +19,25 @@ class Forum(models.Model):
     latest_thread_time = models.DateTimeField(blank=True, null=True)
     
     def __str__(self):
-        return self.name
+        name = (self.name).lower().replace(' ', '-')
+        return name
+
+class SubForum(models.Model):
+    parent = models.ForeignKey(Forum, on_delete=Forum, null=True)
+    name = models.CharField(max_length=150)
+    description = models.CharField(max_length=500)
+    threads = models.IntegerField(default=0)
+    posts = models.IntegerField(default=0)
+    ordering = models.IntegerField(blank=True, null=True)
+    latest_thread_time = models.DateTimeField(blank=True, null=True)
+    
+    def __str__(self):
+        name = (self.name).lower().replace(' ', '-')
+        return name
 
 class Thread(models.Model):
-    forum = models.ForeignKey(Forum, on_delete=Forum)
+    forum = models.ForeignKey(Forum, on_delete=Forum, null=True, blank=True)
+    subforum = models.ForeignKey(SubForum, on_delete=SubForum, null=True, blank=True)
     name = models.CharField(max_length=150)
     content = models.CharField(max_length=1000)
     labels = models.CharField(max_length=500)
