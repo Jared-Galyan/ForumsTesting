@@ -1,14 +1,12 @@
-#profile-column{
-    width: 100%;
-    max-width: 1300px;
-    display:inline-block;
-}
+
 #profile-container{
     background-color:#434343;
-    border-color:#707070;
+    border-color:#b4a3a3;
     border-style: solid;
     border-width: thin;
     height: auto;
+    width: 100%;
+    max-width: 1300px;
 }
 #profile-flex{
     display:flex;
@@ -57,6 +55,8 @@
     border-width: thin;
     height:auto;
     margin-bottom: 5px;
+    width: 100%;
+    max-width: 1300px;
 }
 
 #profile-container p{
@@ -74,4 +74,39 @@
     padding-left: 1em;
     padding-top: 1em;
     margin-top: -25px;
+}
+
+#role{
+    padding: 3px;
+    border-radius: 25%;
+    text-align: left;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#lowerLeftColumn{
+    max-width: 200px;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+#roleContainer{
+    background-color:#434343;
+    border-color:#b4a3a3;
+    border-style: solid;
+    border-width: thin;
+    height: auto;
+}
+#roleContainer h3{
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#roleContainer hr{
+    border-top: 1px solid #bbb;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -10px;
 }

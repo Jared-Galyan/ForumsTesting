@@ -1,13 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from accounts.models import RolePermissions
 
 class Category(models.Model):
     name = models.CharField(max_length=150, default='None')
     ordering = models.IntegerField(blank=True, null=True)
-    perms = models.CharField(max_length=500, default='None', null=True)
+    perm = models.CharField(max_length=150, default=f'cate-{name}')
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        created = self.pk is None
+        super(Category, self).save(*args, **kwargs)
+        if created:
+            name = (self.name).lower().replace(' ', '-')
+            RolePermissions.objects.create(perm=f'cate.{name}.view')
+            RolePermissions.objects.create(perm=f'cate.{name}.post')
 
 class Forum(models.Model):
     category = models.ForeignKey(Category, on_delete=Category, null=True)
@@ -17,10 +27,19 @@ class Forum(models.Model):
     posts = models.IntegerField(default=0)
     ordering = models.IntegerField(blank=True, null=True)
     latest_thread_time = models.DateTimeField(blank=True, null=True)
+    perm = models.CharField(max_length=150, default=f'forum-{name}')
     
     def __str__(self):
         name = (self.name).lower().replace(' ', '-')
         return name
+    
+    def save(self, *args, **kwargs):
+        created = self.pk is None
+        super(Forum, self).save(*args, **kwargs)
+        if created:
+            name = (self.name).lower().replace(' ', '-')
+            RolePermissions.objects.create(perm=f'forum.{name}.view')
+            RolePermissions.objects.create(perm=f'forum.{name}.post')
 
 class SubForum(models.Model):
     parent = models.ForeignKey(Forum, on_delete=Forum, null=True)
@@ -30,10 +49,19 @@ class SubForum(models.Model):
     posts = models.IntegerField(default=0)
     ordering = models.IntegerField(blank=True, null=True)
     latest_thread_time = models.DateTimeField(blank=True, null=True)
+    perm = models.CharField(max_length=150, default=f'subf-{name}')
     
     def __str__(self):
         name = (self.name).lower().replace(' ', '-')
         return name
+    
+    def save(self, *args, **kwargs):
+        created = self.pk is None
+        super(Forum, self).save(*args, **kwargs)
+        if created:
+            name = (self.name).lower().replace(' ', '-')
+            RolePermissions.objects.create(perm=f'subf.{name}.view')
+            RolePermissions.objects.create(perm=f'subf.{name}.post')
 
 class Thread(models.Model):
     forum = models.ForeignKey(Forum, on_delete=Forum, null=True, blank=True)

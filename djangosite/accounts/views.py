@@ -17,6 +17,10 @@ class ProfileView(TemplateView):
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         args = {'user_data': user}
+
+        for role in user.userprofile.roles.all():
+            print(role.color)
+
         return render(request, self.template_name, args)
 
 class RegisterView(TemplateView):

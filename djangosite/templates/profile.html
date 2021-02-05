@@ -20,7 +20,15 @@
             </div>
         </div>
         <div id="profile-container-bottom">
-            <h2>{{ user_data.username }}</h2>
+            <div id="lowerLeftColumn">
+                <div id="roleContainer">
+                    <h3>User's Roles</h3>
+                    <hr>
+                    {% for role in user_data.userprofile.roles.all %}
+                        <div id="role" style="color: {{ role.color }}">{{ role.role }}</div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
